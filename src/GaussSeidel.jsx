@@ -48,7 +48,7 @@ function GaussSeidel() {
     const vectorX0 = convertVectorToString(x0);
 
     try {
-      const response = await axios.post('http://localhost:5000/gauss-seidel', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/gauss-seidel', {
         A: matrixA,
         b: vectorB,
         x0: vectorX0,

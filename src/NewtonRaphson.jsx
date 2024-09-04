@@ -17,7 +17,7 @@ function NewtonRaphson() {
 
   const fetchAPI = async (funcion, x0) => {
     try {
-      const response = await axios.post('http://localhost:5000/newtonRaphson', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/newtonRaphson', {
         funcion: funcion,
         x0: parseFloat(x0),
         tol: 0.0001

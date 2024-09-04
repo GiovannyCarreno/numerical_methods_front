@@ -17,7 +17,7 @@ function Secante() {
 
   const fetchAPI = async (funcion, x0, x1, tol) => {
     try {
-      const response = await axios.post('http://localhost:5000/secante', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/secante', {
         funcion: funcion,
         x0: parseFloat(x0),
         x1: parseFloat(x1),

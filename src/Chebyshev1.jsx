@@ -16,7 +16,7 @@ function Chebyshev1() {
 
   const fetchAPI = async (funcion, n) => {
     try {
-      const response = await axios.post('http://localhost:5000/chebyshev2', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/chebyshev2', {
         funcion: funcion,
         n: parseFloat(n)
       });

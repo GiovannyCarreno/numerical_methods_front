@@ -18,7 +18,7 @@ function Trapecio() {
 
   const fetchAPI = async (funcion, a, b, n) => {
     try {
-      const response = await axios.post('http://localhost:5000/trapecio', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/trapecio', {
         funcion: funcion,
         a: parseFloat(a),
         b: parseFloat(b),

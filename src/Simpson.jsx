@@ -18,7 +18,7 @@ function Simpson() {
 
   const fetchAPI = async (funcion, a, b, n) => {
     try {
-      const response = await axios.post('http://localhost:5000/simpson', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/simpson', {
         funcion: funcion,
         a: parseFloat(a),
         b: parseFloat(b),

@@ -17,7 +17,7 @@ function Biseccion() {
 
   const fetchAPI = async (funcion, a, b) => {
     try {
-      const response = await axios.post('http://localhost:5000/biseccion', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/biseccion', {
         funcion: funcion,
         a: parseFloat(a),
         b: parseFloat(b),

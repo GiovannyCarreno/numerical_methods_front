@@ -44,7 +44,7 @@ function Jacobi() {
 
   const fetchAPI = async (A, b, x0, tolerancia, max_iter) => {
     try {
-      const response = await axios.post('http://localhost:5000/jacobi', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/jacobi', {
         A: convertMatrixToString(A),
         b: convertVectorToString(b),
         x0: convertVectorToString(x0),

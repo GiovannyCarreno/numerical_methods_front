@@ -13,7 +13,7 @@ function Euler() {
 
   const fetchAPI = async (ecuacion, a, b, y0, n) => {
     try {
-      const response = await axios.post('http://localhost:5000/euler', {
+      const response = await axios.post('https://numericalmethodsback-production.up.railway.app/euler', {
         ecuacion: ecuacion,
         a: parseFloat(a),
         b: parseFloat(b),
