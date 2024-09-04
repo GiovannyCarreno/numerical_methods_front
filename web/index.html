@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Servicios</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Métodos Numéricos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#newton">Newton-Raphson</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#biseccion">Bisección</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#secante">Secante</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#punto-fijo">Punto Fijo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gauss-seidel">Gauss-Seidel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#jacobi">Jacobi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Menú</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#newton">Newton-Raphson</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#biseccion">Bisección</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#secante">Secante</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#punto-fijo">Punto Fijo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gauss-seidel">Gauss-Seidel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#jacobi">Jacobi</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <H1 class="text-center m-1">Metodo Biseccion</H1>
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-sm-7">
+              <input type="text" class="form-control" placeholder="Funcion" aria-label="City">
+            </div>
+            <div class="col-sm">
+              <input type="text" class="form-control" placeholder="Punto Inicial" aria-label="State">
+            </div>
+            <div class="col-sm">
+              <input type="text" class="form-control" placeholder="Error Porcentual" aria-label="Zip">
+            </div>
+        </div> 
+        <div class="container m-1 d-flex justify-content-center">
+            <a href="#" class="btn btn-primary btn-lg custom-btn m-1">Calcular</a>
+        </div>
+        
+        
+    </div>
+
+    <div class="container calculator">
+      <div class="card">
+          <div class="card-body">
+              <input type="text" id="display" class="form-control mb-3" readonly>
+              <div class="btn-group d-flex flex-wrap">
+                  <!-- Botones de la calculadora -->
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('7')">7</button>
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('8')">8</button>
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('9')">9</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('/')">/</button>
+                  
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('4')">4</button>
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('5')">5</button>
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('6')">6</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('*')">*</button>
+                  
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('1')">1</button>
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('2')">2</button>
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('3')">3</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('-')">-</button>
+                  
+                  <button class="btn btn-secondary m-1" onclick="appendNumber('0')">0</button>
+                  <button class="btn btn-secondary m-1" onclick="appendDot()">.</button>
+                  <button class="btn btn-secondary m-1" onclick="calculate()">=</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('+')">+</button>
+                  
+                  <button class="btn btn-secondary m-1" onclick="clearDisplay()">C</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('(')">(</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator(')')">)</button>
+                  <button class="btn btn-secondary m-1" onclick="backspace()">&larr;</button>
+                  
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('sin(')">sin</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('cos(')">cos</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('tan(')">^</button>
+                  <button class="btn btn-secondary m-1" onclick="appendOperator('sqrt(')">√</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center"> <!-- Centra las columnas horizontalmente -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Método de Newton-Raphson</h5>
+                    <p class="card-text">El método de Newton-Raphson es un método iterativo para encontrar raíces de ecuaciones.</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Método de Bisección</h5>
+                    <p class="card-text">El método de bisección es un método de búsqueda de raíces que divide repetidamente un intervalo en dos partes.</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Método de la Secante</h5>
+                    <p class="card-text">El método de la secante es un método numérico para encontrar raíces de una función.</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Método del Punto Fijo</h5>
+                    <p class="card-text">El método del punto fijo es un método iterativo para encontrar soluciones de ecuaciones.</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Método de Gauss-Seidel</h5>
+                    <p class="card-text">El método de Gauss-Seidel es un método iterativo para resolver sistemas de ecuaciones lineales.</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Método de Jacobi</h5>
+                    <p class="card-text">El método de Jacobi es un método iterativo para resolver sistemas de ecuaciones lineales.</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>    
+<script src="scripts.js"></script>     
+</body>
+</html>

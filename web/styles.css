@@ -1,0 +1,22 @@
+.calculator {
+    margin: 50px auto;
+    width: 400px;
+}
+
+.calculator .form-control {
+    text-align: right;
+}
+
+.calculator button {
+    width: calc(25% - 10px); /* Adjust width to account for margin */
+    margin: 5px; /* Add margin for spacing between buttons */
+}
+.card {
+    height: 100%;
+}
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        display: none !important; /* Oculta el menú desplegable */
+    }
+}
+
